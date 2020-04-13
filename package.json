@@ -1,0 +1,29 @@
+{
+  "name": "visual-connectors",
+  "version": "0.1.0",
+  "description": "A light-weight js lib for visual connectors between html elements",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server -c configs/my-bs-config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florian-kittel/visual-connectors.git"
+  },
+  "keywords": [
+    "javascript",
+    "arrow",
+    "conntector"
+  ],
+  "author": "Florian Kittel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/florian-kittel/visual-connectors/issues"
+  },
+  "homepage": "https://github.com/florian-kittel/visual-connectors#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
