@@ -1,38 +1,32 @@
 function drawLine() {
   var elms = document.getElementsByClassName("element");
-//console.log(elms);
   var elm1 = elms[0];
   var elm2 = elms[1];
-  
+
   var startTop = elm1.offsetTop + (elm1.offsetHeight / 2);
   var startLeft = elm1.offsetLeft + (elm1.offsetWidth);
-  
-   var endTop = elm2.offsetTop + (elm1.offsetHeight / 2);
-  var endLeft = elm2.offsetLeft; 
-  
-  
-var c = document.getElementById("myCanvas");
+
+  var endTop = elm2.offsetTop + (elm1.offsetHeight / 2);
+  var endLeft = elm2.offsetLeft;
+
+  var c = document.getElementById("myCanvas");
   c.width = window.innerWidth;
-            c.height = window.innerHeight;
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(startLeft, startTop);
-ctx.lineTo(startLeft + (endLeft - startLeft) / 2, startTop);
-ctx.lineTo(startLeft + (endLeft - startLeft) / 2, endTop);
-ctx.lineTo(endLeft, endTop);
-ctx.stroke();
-  
+  c.height = window.innerHeight;
+  var ctx = c.getContext("2d");
+  ctx.beginPath();
+  ctx.moveTo(startLeft, startTop);
+  ctx.lineTo(startLeft + (endLeft - startLeft) / 2, startTop);
+  ctx.lineTo(startLeft + (endLeft - startLeft) / 2, endTop);
+  ctx.lineTo(endLeft, endTop);
+  ctx.stroke();
+
 }
 
-
-
-drawLine();
-
-dragElement(document.getElementById("dragger"));
-dragElement(document.getElementById("dragger2"));
-
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -71,9 +65,15 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
-  
+
   function calcVal(val) {
-   // console.log(Math.round(val / 20) * 20);
+    // console.log(Math.round(val / 20) * 20);
     return Math.round(val / 20) * 20;
   }
 }
+
+
+drawLine();
+
+dragElement(document.getElementById("dragger"));
+dragElement(document.getElementById("dragger2"));
